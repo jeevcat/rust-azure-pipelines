@@ -47,7 +47,7 @@ jobs:
   dependsOn: ${{ parameters['job_dependsOn'] }}
   continueOnError: ${{ parameters['job_continueOnError'] }}
   pool:
-    vmImage: ubuntu-16.04
+    vmImage: ubuntu-latest
   variables:
     check_flags: ''
   steps:

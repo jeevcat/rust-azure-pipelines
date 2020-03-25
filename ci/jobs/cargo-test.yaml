@@ -8,11 +8,11 @@ parameters:
   job_strategy:                     # Default strategy to test on Windows, MacOs and Linux.
     matrix:
       Linux:
-        vmImage: ubuntu-16.04
+        vmImage: ubuntu-latest
       MacOS:
-        vmImage: macOS-10.15
+        vmImage: macOS-latest
       Windows:
-        vmImage: vs2017-win2016
+        vmImage: windows-latest
   # global parameters
   rust: stable                # Version of rust. Could be [stable, beta, nightly, 1.31, nightly-2018-08-01 ... ]
 

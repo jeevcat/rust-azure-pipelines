@@ -53,7 +53,7 @@ jobs:
   continueOnError: ${{ parameters['job_continueOnError'] }}
   dependsOn: ${{ parameters['job_dependsOn'] }}
   pool:
-    vmImage: ubuntu-16.04
+    vmImage: ubuntu-latest
   variables:
     clippy_flags: ''
     check_flags: ''

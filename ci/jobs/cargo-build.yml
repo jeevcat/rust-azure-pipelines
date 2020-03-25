@@ -7,7 +7,7 @@ parameters:
   job_post-steps: []                # Custom steps running after job
   job_pre-steps: []                 # Custom steps before job start
   job_pool:
-    vmImage: ubuntu-16.04           # Default vmImage
+    vmImage: ubuntu-latest           # Default vmImage
 
   # global parameters
   rust: stable                # Version of rust. Could be [stable, beta, nightly, 1.31, nightly-2018-08-01 ... ]

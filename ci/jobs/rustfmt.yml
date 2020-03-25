@@ -39,7 +39,7 @@ jobs:
   continueOnError: ${{ parameters['job_continueOnError'] }}
   dependsOn: ${{ parameters['job_dependsOn'] }}
   pool:
-    vmImage: ubuntu-16.04
+    vmImage: ubuntu-latest
   variables:
     fmt_flags: ''
     rustfmt_flags: ''
