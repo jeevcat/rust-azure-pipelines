@@ -28,8 +28,9 @@ steps:
         archiveType: ${{ parameters['archiveType'] }}
         tarCompression: none
         archiveFile: "$(Build.ArtifactStagingDirectory)/${{ parameters['archiveName'] }}.zip"
-  - task: PublishBuildArtifacts@1
+  - task: PublishPipelineArtifact@1
     displayName: "Publish: $(Build.ArtifactStagingDirectory)"
     inputs:
-      artifactName: ${{ parameters['artifactName'] }}
-
+      targetPath: '$(Build.ArtifactStagingDirectory)'
+      artifact: '${{ parameters[''artifactName''] }}'
+      publishLocation: 'pipeline'
