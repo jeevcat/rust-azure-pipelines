@@ -8,6 +8,7 @@ parameters:
   rust: stable                # Version of rust. Could be [stable, beta, nightly, 1.31, nightly-2018-08-01 ... ]
 
   release: true               # build with release flag
+  artifactName: target
   builds:
     - target: x86_64-unknown-linux-gnu 
       name: x86_64_unknown_linux_gnu
@@ -39,7 +40,7 @@ jobs:
           - template: ../steps/artifacts.yml
             parameters:
               archiveName: "$(REPO_BASE_NAME) - ${{ build.target }}"
-              artifactName: "$(REPO_BASE_NAME) - ${{ build.target }}"
+              artifactName: ${{ parameters['artifactName'] }}
 
   - ${{ if contains(build.target, 'apple') }}:
     - template: ../jobs/cargo-build.yml
@@ -59,7 +60,7 @@ jobs:
           - template: ../steps/artifacts.yml
             parameters:
               archiveName: "$(REPO_BASE_NAME) - ${{ build.target }}"
-              artifactName: "$(REPO_BASE_NAME) - ${{ build.target }}"
+              artifactName: ${{ parameters['artifactName'] }}
 
   - ${{ if contains(build.target, 'windows') }}:
     - template: ../jobs/cargo-build.yml
@@ -79,4 +80,4 @@ jobs:
           - template: ../steps/artifacts.yml
             parameters:
               archiveName: "$(REPO_BASE_NAME) - ${{ build.target }}"
-              artifactName: "$(REPO_BASE_NAME) - ${{ build.target }}"
+              artifactName: ${{ parameters['artifactName'] }}
