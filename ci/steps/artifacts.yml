@@ -8,6 +8,7 @@ parameters:
     !**/*.d
     !**/.*
     !.*
+    !**/CACHEDIR.TAG
   sourceFolder: "$(Build.SourcesDirectory)/target/"
   artifactName: target
   archiveName: "$(Build.Repository.Name)"
