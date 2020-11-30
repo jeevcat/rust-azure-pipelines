@@ -162,7 +162,7 @@ jobs:
 
   # Final run
   - script: cross build $(check_flags)
-    displayName: Run Cargo check with defined flags 
+    displayName: Run Cargo build with defined flags 
 
   # Custom steps:
   - ${{ if parameters['job_post-steps'] }}:
